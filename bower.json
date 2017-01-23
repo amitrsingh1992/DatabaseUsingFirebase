@@ -1,0 +1,23 @@
+{
+  "name": "Firebase Database",
+  "authors": [
+    "amitrsingh1992 <singh.amit.10ee1074@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "satellizer": "^0.15.5"
+  }
+}

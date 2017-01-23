@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Data Input in Firebase</title>
+    <script src="bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+  </head>
+  <body ng-app="firebase" ng-controller="database">
+    <form name="form1">
+
+      <table>
+        <tr>
+          <td>Engineer Id:</td>
+          <td><input type="text" ng-model="engId"/></td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" ng-model="name"/></td>
+        </tr>
+        <tr>
+          <td><input type="button" ng-click="Submit()" value="Submit"></td>
+        </tr>
+      </table>
+
+    </form>
+    <script src="config.js" charset="utf-8"></script>
+    <script>
+      angular.module("firebase",[]).controller("database",function ($scope) {
+
+        $scope.Submit=function () {
+          console.log($scope.name);
+          dummy.personal.employeeName=$scope.name;
+          var ref = firebase.database().ref("dummy");
+          ref.child($scope.engId).set(dummy);
+          ref.on("child_added",function (data) {
+            console.log(data.val());
+          })
+        }
+      });
+    </script>
+  </body>
+
+</html>
